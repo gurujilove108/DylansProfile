@@ -1,17 +1,36 @@
-application: new-project-template
+application: dylans-profile
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+- url: /css
+  static_dir: static/css
 
-- url: .*
-  script: main.app
+- url: /js
+  static_dir: static/js
+
+- url: /partials
+  static_dir: static/partials
+
+- url: /fonts
+  static_dir: static/fonts
+
+- url: /img
+  static_dir: static/img
+
+- url: /
+  static_files: templates/index.html
+  upload: templates/index\.html
+  secure: always
+
+- url: /_ah/spi/.*
+  script: main.api
+  secure: always
 
 libraries:
-- name: webapp2
-  version: "2.5.2"
+- name: endpoints
+  version: latest
+- name: pycrypto
+  version: latest
