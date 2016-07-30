@@ -2,29 +2,25 @@
 <!-- Bootstrap the angular app after the Google Java Script libraries are loaded. -->
 <html lang="en">
 <head>
-    <title>Custom Rejection</title>
+    <title>Dylan's Profile</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Conference Central">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Conference Central web app that lets you manage conferences.">
+
+    <meta property="og:title" content="Dylans Coder Profile">
+    <meta property="og:type" content="Content Data">
+    <meta property="og:description" content="Profile web app to show off my skills.">
     <meta property="og:image" content="/img/CloudPlatform_logo.png">
-    <meta property="og:site_name" content="An web app powered by Google App Engine">
+    <meta property="og:site_name" content="A web app powered by Google App Engine. Specifically the technologies I am utilizing  is 'python google cloud endpoints', 'AngularJS', obviously HTML5 Semantics along with css3 to make a super well designed dynamic profile about my programming journey! Enjoy.">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="shortcut icon" href="/img/favicon.ico">
+
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
-    <script src="/js/utils.js"></script>
-
     <script>
         function init() {
-            gapi.client.load('user_endpoint', 'v1', null, '//' + window.location.host + '/_ah/api');
+            gapi.client.load('user_endpoint', 'v1', function () {gapi.client.setApiKey("AIzaSyDXCZc6vEZQf6i_2ofwOE1mLYqzTS6EAWk")}, '//' + window.location.host + '/_ah/api');
             gapi.client.load('oauth2', 'v2', function () {
                 angular.bootstrap(document, ['dylansProfileApp']);
             });
@@ -33,8 +29,56 @@
     <script src="//apis.google.com/js/client:plusone.js?onload=init"></script>
 </head>
 
-<body ng-controller="RootController" ng-init="init()">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <body ng-controller="RootController" ng-init="initSignInButton()">
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="#"><h2>Profile Options</h2></a></li>
+                    <li class="nav-item"><a href="/twilio_dashbard"><h4>Twilio Dashboard</h4></a></li>
+                    <li class="nav-item"><a href="/nanodegrees"><h4>Udacity Nanodegrees</h4></a></li>
+                    <li class="nav-item"><a href="/Personal Projects"><h4>Personal Projects</h4></a></li>
+                </ul>
+            </div>
+            <!-- /sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav class="navbar navbar-dark bg-inverse" >
+                                <ul class="nav navbar-nav">
+                                    <li class="nav-item">
+                                        <a id="menu-toggle" class="btn btn-default btn-primary" type="button" ng-click="toggleMenuAngular()">
+                                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item"><a class="navbar-brand" href="#">Dylan's Coder Profile</a></li>
+                                </ul>
+                          </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+    <script>
+      // $("#menu-toggle").click(function(e) {
+      //     e.preventDefault();
+      //     $("#wrapper").toggleClass("toggled");
+      // });
+    </script>
+    <link href="/css/sidenav.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+    </body>
+
+</html>
+    <!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,34 +90,25 @@
                 <a class="navbar-brand" href="/">Dylan's Profile</a>
             </div>
             <div class="navbar-collapse collapse">
-                <!-- <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Google+ SignIn</a></li>
+                    <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Log out</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
                     <li ng-class="{ active: isActive('/conference')}" ng-click="collapseNavbar()"><a href="#/conference">Show Conferences</a></li>
                     <li ng-class="{ active: isActive('/conference/create')}" ng-click="collapseNavbar()"><a href="#/conference/create" >Create Conferences</a></li>
                     <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">My Profile</a></li>
                     <li class="nav-divider"></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Google+ SignIn</a></li>
-                    <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Log out</a></li>
-                </ul> -->
             </div>
         </div>
-    </div>
-
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages">
-                    <span ng-bind="rootMessages"></span>
-                    <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''"
-                       ng-show="rootMessages"></i>
-                </div>
-            </div>
-        </div>
-        <ng-view></ng-view>
-    </div> -->
-    <script src="/js/app.js"></script>
-    <script src="/js/controllers.js"></script>
-</body>
-
-</html>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages">
+                        <span ng-bind="rootMessages"></span><i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''"ng-show="rootMessages"></i>
+                 </div>
+             </div>
+         </div>
+      </div>
+     </div> -->

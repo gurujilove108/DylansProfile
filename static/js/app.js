@@ -1,97 +1,48 @@
 'use strict';
 
-/**
- * @ngdoc object
- * @name conferenceApp
- * @requires $routeProvider
- * @requires conferenceControllers
- * @requires ui.bootstrap
- *
- * @description
- * Root app, which routes and specifies the partial html and controller depending on the url requested.
- *
- */
-var app = angular.module('dylansProfileApp', ['conferenceControllers', 'ngRoute', 'ui.bootstrap']);
+var app = angular.module('dylansProfileApp', ['dylansProfileControllers', 'ngRoute', 'ui.bootstrap']);
 app.config(["$routeProvider", function ($routeProvider) {
-            $routeProvider.
-                when('/conference', {
-                    templateUrl: '/partials/show_conferences.html',
-                    controller: 'ShowConferenceCtrl'
-                }).
-                when('/conference/create', {
-                    templateUrl: '/partials/create_conferences.html',
-                    controller: 'CreateConferenceCtrl'
-                }).
-                when('/conference/detail/:websafeConferenceKey', {
-                    templateUrl: '/partials/conference_detail.html',
-                    controller: 'ConferenceDetailCtrl'
-                }).
-                when('/profile', {
-                    templateUrl: '/partials/profile.html',
-                    controller: 'MyProfileCtrl'
-                }).
-                when('/', {
-                    templateUrl: '/partials/home.html'
-                }).
-                otherwise({
-                    redirectTo: '/'
-                });
+            $routeProvider.when('/conference', {
+                templateUrl: '/partials/twilio_dashbard.html',
+                controller: 'TwilioController'
+            });
+            $routeProvider.when('/conference/create', {
+                templateUrl: '/partials/create_conferences.html',
+                controller: 'CreateConferenceCtrl'
+            });
+            $routeProvider.when('/conference/detail/:websafeConferenceKey', {
+                templateUrl: '/partials/conference_detail.html',
+                controller: 'ConferenceDetailCtrl'
+            });
+            $routeProvider.when('/profile', {
+                templateUrl: '/partials/profile.html',
+                controller: 'MyProfileCtrl'
+            });
+            $routeProvider.when('/', {
+                templateUrl: '/templates/index.html'
+            });
+            $routeProvider.otherwise({
+                redirectTo: '/'
+            });
         }]);
 
-/**
- * @ngdoc filter
- * @name startFrom
- *
- * @description
- * A filter that extracts an array from the specific index.
- *
- */
 app.filter('startFrom', function () {
-    /**
-     * Extracts an array from the specific index.
-     *
-     * @param {Array} data
-     * @param {Integer} start
-     * @returns {Array|*}
-     */
     var filter = function (data, start) {
         return data.slice(start);
     }
     return filter;
 });
 
-
-/**
- * @ngdoc constant
- * @name HTTP_ERRORS
- *
- * @description
- * Holds the constants that represent HTTP error codes.
- *
- */
 app.constant('HTTP_ERRORS', {
     'UNAUTHORIZED': 401
 });
 
-
-/**
- * @ngdoc service
- * @name oauth2Provider
- *
- * @description
- * Service that holds the OAuth2 information shared across all the pages.
- *
- */
 app.factory('oauth2Provider', function ($modal) {
     var oauth2Provider = {
-        CLIENT_ID: 'web-client-id',
+        CLIENT_ID: '39830639023-6ijh10vnoq4cdgkoh4me2btt4sfjgqco.apps.googleusercontent.com',
         SCOPES: 'email profile',
         signedIn: false
     }
-
-    /**
-     * Calls the OAuth2 authentication method.
-     */
     oauth2Provider.signIn = function (callback) {
         gapi.auth.signIn({
             'clientid': oauth2Provider.CLIENT_ID,
@@ -103,12 +54,8 @@ app.factory('oauth2Provider', function ($modal) {
         });
     };
 
-    /**
-     * Logs out the user.
-     */
     oauth2Provider.signOut = function () {
         gapi.auth.signOut();
-        // Explicitly set the invalid access token in order to make the API calls fail.
         gapi.auth.setToken({access_token: ''})
         oauth2Provider.signedIn = false;
     };

@@ -62,9 +62,8 @@
     line-height: 40px;
 }
 
-.sidebar-nav li a {
+.sidebar-nav li.nav-item a {
     display: block;
-    text-decoration: none;
     color: #999999;
 }
 

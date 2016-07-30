@@ -1,5 +1,6 @@
 import endpoints
-from request_models import *
+from request_models.user_rpc_messages import *
+from protorpc import remote
 from settings import WEB_CLIENT_ID
 
 EMAIL_SCOPE = endpoints.EMAIL_SCOPE
