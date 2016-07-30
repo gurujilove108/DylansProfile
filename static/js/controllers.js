@@ -44,12 +44,12 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
     $scope.toggleMenuAngular = function() {
         var t1 = timeNow();
         var wrapper = angular.element(document.querySelector("#wrapper"))[0];
-        var toggleSideNav = function() {
+        (function() {
             if (wrapper.className == "") wrapper.className = "toggled";
             else if (wrapper.className == "toggled") wrapper.className = ""
-        }
+        })()
         var t2 = timeNow();
-        logReplaced("%s", round(t2-t1), "toggleMenu took %s seconds")
+        logReplaced("%s", round(t2-t1, 2), "toggleMenu took %s seconds")
     }
 });
 
