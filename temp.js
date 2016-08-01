@@ -1161,3 +1161,39 @@ app.factory('oauth2Provider', function ($modal) {
     </script>
   </body>
 </html>
+
+/*<!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Dylan's Profile</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Google+ SignIn</a></li>
+                    <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Log out</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active: isActive('/conference')}" ng-click="collapseNavbar()"><a href="#/conference">Show Conferences</a></li>
+                    <li ng-class="{ active: isActive('/conference/create')}" ng-click="collapseNavbar()"><a href="#/conference/create" >Create Conferences</a></li>
+                    <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">My Profile</a></li>
+                    <li class="nav-divider"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages">
+                        <span ng-bind="rootMessages"></span><i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''"ng-show="rootMessages"></i>
+                 </div>
+             </div>
+         </div>
+      </div>
+     </div> -->
+ */

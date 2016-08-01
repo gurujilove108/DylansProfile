@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script type="text/javascript">var t1 = performance.now()</script>
 <!-- Bootstrap the angular app after the Google Java Script libraries are loaded. -->
 <html lang="en">
 <head>
@@ -9,11 +10,13 @@
 
     <meta property="og:title" content="Dylans Coder Profile">
     <meta property="og:type" content="Content Data">
-    <meta property="og:description" content="Profile web app to show off my skills.">
+    <meta property="og:description" content="Profile web app as a resume.">
     <meta property="og:image" content="/img/CloudPlatform_logo.png">
     <meta property="og:site_name" content="A web app powered by Google App Engine. Specifically the technologies I am utilizing  is 'python google cloud endpoints', 'AngularJS', obviously HTML5 Semantics along with css3 to make a super well designed dynamic profile about my programming journey! Enjoy.">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="/css/sidenav.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
@@ -31,79 +34,61 @@
 
     <body ng-controller="RootController" ng-init="initSignInButton()">
         <div id="wrapper">
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand"><a href="#"><h2>Profile Options</h2></a></li>
-                    <li class="nav-item"><a href="/twilio_dashbard"><h4>Udacity Nanodegrees</h4></a></li>
-                    <li class="nav-item"><a href="/nanodegrees"><h4>Twilio DashBoard</h4></a></li>
-                    <li class="nav-item"><a href="/Personal Projects"><h4>Search Tweets</h4></a></li>
-                </ul>
-            </div>
-            <!-- /sidebar-wrapper -->
+            <div class="container-fluid">
 
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <nav class="navbar navbar-dark bg-inverse" >
-                                <ul class="nav navbar-nav">
-                                    <li class="nav-item">
-                                        <a id="menu-toggle" class="btn btn-default btn-primary" type="button" ng-click="toggleMenuAngular()">
-                                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item"><a class="navbar-brand" href="#">Dylan's Coder Profile</a></li>
-                                </ul>
-                          </nav>
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav text-left">
+                        <li class="nav-item orbitron-font"><a href="/nanodegrees"></h1>Udacity Nanodegrees</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/twilio_dashbard"></h1>Twilio Dashboard</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/code_tutorials"></h1>Programming Tutorials</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/code_forums"></h1>Code Forums</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/dylans_forum"></h1>Dylans-Profile Forums</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/rss_feeds"></h1>Rss Feeds</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/social_network_data"></h1>Social Network Data</h1></a></li>
+                        <li class="nav-item orbitron-font"><a href="/video_feed"></h1>Youtube Apis</h1></a></li>
+                    </ul>
+                </div>
+                <!-- /sidebar-wrapper -->
+
+
+                <!-- Page Content -->
+                <div id="page-content-wrapper" class="pcw-custom">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <nav class="navbar navbar-dark bg-inverse" >
+                                    <ul class="nav navbar-nav">
+                                        <li class="nav-item">
+                                            <a id="menu-toggle" class="btn btn-default btn-primary" type="button" ng-click="toggleMenuAngular()">
+                                                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                                            </a>
+                                        </li>
+                                        <li id="nav-brand-custom" class="nav-item"><a class="navbar-brand" href="#">Dylan's Coder Profiles</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /#page-content-wrapper -->
-        </div>
+                <!-- /#page-content-wrapper -->
 
-        <link href="/css/sidenav.css" rel="stylesheet">
+            </div>
+            <!-- / .container-fluid -->
+
+        </div>
+        <!-- / #wrapper -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="/js/config.js"></script>
         <script src="/js/utils.js"></script>
         <script src="/js/app.js"></script>
         <script src="/js/controllers.js"></script>
+        <script>
+            loadStyleSheetsAsync();
+            var t2 = performance.now();
+            var pageLoadMiliseconds = round(t2-t1, 2);
+            logReplaced("ms", pageLoadMiliseconds, "It took approximately ms miliseconds to load the page");
+        </script>
     </body>
-
 </html>
-    <!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Dylan's Profile</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Google+ SignIn</a></li>
-                    <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Log out</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li ng-class="{ active: isActive('/conference')}" ng-click="collapseNavbar()"><a href="#/conference">Show Conferences</a></li>
-                    <li ng-class="{ active: isActive('/conference/create')}" ng-click="collapseNavbar()"><a href="#/conference/create" >Create Conferences</a></li>
-                    <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">My Profile</a></li>
-                    <li class="nav-divider"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages">
-                        <span ng-bind="rootMessages"></span><i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''"ng-show="rootMessages"></i>
-                 </div>
-             </div>
-         </div>
-      </div>
-     </div> -->

@@ -14,3 +14,13 @@ function logReplaced(symbol, replacement_str, message) {
     log(message.replace(symbol, replacement_str));
 }
 
+function loadStyleSheetsAsync() {
+    config.stylesheetsAsyncLoad.forEach(function(link, index, args) {
+        $("head").append(link);
+    });
+}
+
+function fixToggleMenuButton() {
+
+}
+

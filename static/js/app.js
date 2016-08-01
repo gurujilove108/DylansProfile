@@ -1,30 +1,52 @@
 'use strict';
 
 var app = angular.module('dylansProfileApp', ['dylansProfileControllers', 'ngRoute', 'ui.bootstrap']);
-app.config(["$routeProvider", function ($routeProvider) {
-            $routeProvider.when('/conference', {
-                templateUrl: '/partials/twilio_dashbard.html',
-                controller: 'TwilioController'
-            });
-            $routeProvider.when('/conference/create', {
-                templateUrl: '/partials/create_conferences.html',
-                controller: 'CreateConferenceCtrl'
-            });
-            $routeProvider.when('/conference/detail/:websafeConferenceKey', {
-                templateUrl: '/partials/conference_detail.html',
-                controller: 'ConferenceDetailCtrl'
-            });
-            $routeProvider.when('/profile', {
-                templateUrl: '/partials/profile.html',
-                controller: 'MyProfileCtrl'
-            });
-            $routeProvider.when('/', {
-                templateUrl: '/templates/index.html'
-            });
-            $routeProvider.otherwise({
-                redirectTo: '/'
-            });
-        }]);
+app.config([
+    "$routeProvider", function ($routeProvider) {
+        $routeProvider.when('/nanodegrees', {
+            templateUrl: '/views/nanodegrees.html',
+            controller: 'NandegreeController'
+        });
+        $routeProvider.when('/twilio_dashbard', {
+            templateUrl: '/views/twilio_dashbard.html',
+            controller: 'TwilioController'
+        });
+        $routeProvider.when('/code_tutorials', {
+            templateUrl: '/views/code_tutorials.html',
+            controller: 'CodeTutorialController'
+        });
+        $routeProvider.when('/code_forums', {
+            templateUrl: '/views/code_forums.html',
+            controller: 'CodeForumsController',
+        });
+        $routeProvider.when('/dylans_forums', {
+            templateUrl: '/views/dylans_forums.html',
+            controller: 'DylansForumController'
+        });
+        $routeProvider.when('/rss_feeds', {
+            templateUrl: '/views/rss_feeds.html',
+            controller: 'RssFeedController'
+
+        });
+        $routeProvider.when('/cmd_center', {
+            templateUrl: '/views/cmd_center.html',
+            controller: 'CommandCenterController'
+        });
+        $routeProvider.when('/social_network_data', {
+            templateUrl: '/views/code_forums.html',
+            controller: 'CodeForumsController'
+        });
+        $routeProvider.when('/youtube_apis', {
+            templateUrl: '/views/youtube_apis.html',
+            controller: 'YoutubeController'
+        });
+        $routeProvider.when('/', {
+            templateUrl: '/templates/index.html'
+        });
+        $routeProvider.otherwise({
+            redirectTo: '/'
+        });
+}]);
 
 app.filter('startFrom', function () {
     var filter = function (data, start) {
