@@ -1,5 +1,3 @@
 var config = {
-    "stylesheetsAsyncLoad": [
-        "<link href='/css/index.css' rel='stylesheet' type='text/css'>"
-    ]
+    "stylesheetsAsyncLoad": []
 }

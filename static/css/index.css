@@ -1,0 +1,31 @@
+#menu-toggle:hover {
+
+}
+
+#menu-toggle {
+    color: #337ab7;
+    border: 1px solid #337ab7;
+    background-color: white;
+}
+
+
+.login-row {
+    margin-top: 2%;
+}
+
+.nav-item .navbar-brand:hover {
+    background: none;
+}
+
+.nav-header {
+    width: 100%;
+    height: 20%;
+    background: url("") no-repeat center;
+}
+
+.navbar-brand {
+    font-size: 175%;
+}
+.nav-item .navlink {
+    font-size: 125%;
+}

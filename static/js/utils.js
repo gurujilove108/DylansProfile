@@ -19,8 +19,3 @@ function loadStyleSheetsAsync() {
         $("head").append(link);
     });
 }
-
-function fixToggleMenuButton() {
-
-}
-
