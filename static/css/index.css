@@ -8,6 +8,10 @@
     background-color: white;
 }
 
+#wrapper.toggled #menu-toggle {
+    color: #00e600;
+    border: 1px solid #00e600;
+}
 
 .login-row {
     margin-top: 2%;
@@ -26,6 +30,21 @@
 .navbar-brand {
     font-size: 175%;
 }
+
 .nav-item .navlink {
     font-size: 125%;
 }
+.udacity-logo, .twilio-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 5%
+}
+
+.rss-feed- {
+
+}
+
+.code-forum-link {}
+
+.

@@ -71,17 +71,19 @@
     display: block;
     color: #337ab7;
     font-size: 125%;
+    margin-top: 5%;
 }
 
 .sidebar-nav li a:hover {
+    margin-top: ;
     text-decoration: none;
     background: #4d8bff;
     color: #00091a;
 
-    -webkit-animation: fadeItOne 3s ease-in-out;
-    -moz-animation: fadeItOne 3s ease-in-out;
-    -o-animation: fadeItOne 3s ease-in-out;
-    animation: fadeItOne 3s ease-in-out;
+    -webkit-animation: fadeItOne 3s ease-in;
+    -moz-animation: fadeItOne 3s ease-in;
+    -o-animation: fadeItOne 3s ease-in;
+    animation: fadeItOne 3s ease-in;
 }
 
 .sidebar-nav li a:active,
@@ -113,8 +115,8 @@
 @keyframes fadeItTwo {
     0% { background-color: #FFFFFF; }
     10% {background-color: #99bdff; }
-    30% {background-color: #99bdff }
-    40% {background-color: #1a6aff }
+    30% {background-color: #99bdff; }
+    40% {background-color: #1a6aff; }
     50% { background-color: #003eb3; }
     100% { background-color: #001233; }
 }
