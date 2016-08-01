@@ -7,18 +7,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta property="og:title" content="Dylans Coder Profile">
     <meta property="og:type" content="Content Data">
     <meta property="og:description" content="Profile web app as a resume.">
     <meta property="og:image" content="/img/CloudPlatform_logo.png">
     <meta property="og:site_name" content="A web app powered by Google App Engine. Specifically the technologies I am utilizing  is 'python google cloud endpoints', 'AngularJS', obviously HTML5 Semantics along with css3 to make a super well designed dynamic profile about my programming journey! Enjoy.">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="/css/sidenav.css" rel="stylesheet">
-
     <link rel="shortcut icon" href="/img/favicon.ico">
-
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
     <script>
@@ -32,15 +28,12 @@
     <script src="//apis.google.com/js/client:plusone.js?onload=init"></script>
 </head>
 
-    <body ng-controller="RootController" ng-init="initSignInButton()">
-        <div id="wrapper">
+    <body ng-controller="RootController" ng-init="">
+        <div id="wrapper" class="toggled">
             <div class="container-fluid">
 
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
-                    <div id="navbar-header">
-
-                    </div>
                     <ul class="sidebar-nav text-left">
                         <li class="nav-item orbitron-font"><a href="/nanodegrees"></h1>Udacity Nanodegrees</h1></a></li>
                         <li class="nav-item orbitron-font"><a href="/twilio_dashbard"></h1>Twilio Dashboard</h1></a></li>
