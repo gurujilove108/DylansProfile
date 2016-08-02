@@ -1,3 +1,5 @@
+
+
 #menu-toggle:hover {
 
 }
@@ -64,17 +66,76 @@
 .udacity-logo {
     width: 40px;
     height: 40px;
-    border-radius: 40%;
+    border-radius: 50%;
     position: absolute;
-    right: 4%;
+    left: 2%;
+
+    -webkit-transition: all 0.8s ease-in;
+    -moz-transition: all 0.8s ease-in;
+    -o-transition: all 0.8s ease-in;
+    transition: all 0.8s ease-in;
 }
 
-.sidenav-glyphs {
+.twilio-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     position: absolute;
-    right: 4%;
+    left: 2%;
+
+    -webkit-transition: all 0.8s ease-in;
+    -moz-transition: all 0.8s ease-in;
+    -o-transition: all 0.8s ease-in;
+    transition: all 0.8s ease-in;
 }
 
-ul .sidebar-nav .text-left {
+.code-icon {
+    position: absolute;
+    left: -6%;
+    color: deepskyblue;
+}
+
+.rss-feed-icon {
+    position: absolute;
+    left: -5%;
+    color: red;
+}
+
+.about-icon {
+    position: absolute;
+    left: -5%;
+    color: cyan;
+}
+
+.contact-icon {
+    position: absolute;
+    left: -5%;
+    color: brown;
+}
+
+@media only screen and (max-width: 1260px) {
+    #wrapper.toggled #sidebar-wrapper {
+        width: 204px;
+    }
+    #wrapper.toggled #page-content-wrapper .navbar-fixed-top {
+        margin-left: 204px;
+    }
+}
+
+@media only screen and (min-width: 1261px) {
+    #wrapper.toggled #sidebar-wrapper {
+        width: 17%;
+        max-width: 305px;
+    }
+
+    #wrapper.toggled #page-content-wrapper .navbar-nav {
+        margin-left: 305px;
+    }
+
+
+}
+
+@media only screen and (min-width: 798px) {
 
 }
 
