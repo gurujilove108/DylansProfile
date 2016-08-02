@@ -27,22 +27,36 @@
 
 #login-dropdown {
     margin-top: 2%;
+    position: absolute;
+    right: 15%;
+    margin-top: auto;
+    height: 53px;
 }
 
 #login-dropdown button {
     background: none;
-    color: #337ab7;
-    border: 1px solid #337ab7;
-    margin-top: 1%;
-}
-
-#login-dropdown button:hover {
     color: #00bbff;
-    border-color: #00bbff;
+    border: 1px solid #00bbff;
+    position: relative;
+    left: 0;
+    right: 100px;
+    height: 100%;
+    font-size: 105%;
 }
 
-.login-row {
-    margin-top: 2%;
+#login-dropdown button:hover  {
+    color: #001233;
+    background: #00bbff;
+    border-color: #001233;
+}
+
+.open .dropdown-menu {
+    height: 300px;
+    width: 300px;
+    margin-right: 10%;
+}
+
+#login-dropdown .open .dropdown-menu li {
 }
 
 .nav-item .navbar-brand {
@@ -129,14 +143,14 @@
     }
 
     #wrapper.toggled #page-content-wrapper .navbar-nav {
-        margin-left: 305px;
+        margin-left: 17%
     }
-
-
 }
 
-@media only screen and (min-width: 798px) {
-
+@media only screen and (min-width: 1800px) {
+    #wrapper.toggled #page-content-wrapper .navbar-nav {
+        margin-left: 305px;
+    }
 }
 
 /*[ng\:cloak], [ng-cloak], .ng-cloak {
