@@ -3,5 +3,6 @@ jQuery(document).ready(function() {
     // function onResize(event) {
     //     $("#wrapper").removeClass("toggled");
     // }
+    angular.bootstrap(document, ['dylansProfileApp']);
 });
 

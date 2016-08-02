@@ -8,23 +8,49 @@
     background-color: white;
 }
 
+#menu-toggle:hover {
+
+}
+
 #wrapper.toggled #menu-toggle {
-    color: #00e600;
-    border: 1px solid #00e600;
+    color: #337ab7;
+    border: 1px solid #337ab7;
+    background-color: #001233;
+}
+
+#wrapper.toggled #menu-toggle:hover {
+    color: #00bbff;
+    border-color: #00bbff;
+}
+
+#login-dropdown {
+    margin-top: 2%;
+}
+
+#login-dropdown button {
+    background: none;
+    color: #337ab7;
+    border: 1px solid #337ab7;
+    margin-top: 1%;
+}
+
+#login-dropdown button:hover {
+    color: #00bbff;
+    border-color: #00bbff;
 }
 
 .login-row {
     margin-top: 2%;
 }
 
-.nav-item .navbar-brand:hover {
+.nav-item .navbar-brand {
     background: none;
+    color: #00bbff;
+    font-weight: bold;
 }
 
-.nav-header {
-    width: 100%;
-    height: 20%;
-    background: url("") no-repeat center;
+.nav-item .navbar-brand:hover {
+    background: #00131a;
 }
 
 .navbar-brand {
@@ -34,17 +60,28 @@
 .nav-item .navlink {
     font-size: 125%;
 }
-.udacity-logo, .twilio-logo {
+
+.udacity-logo {
     width: 40px;
     height: 40px;
-    border-radius: 5px;
-    margin-left: 5%
+    border-radius: 40%;
+    position: absolute;
+    right: 4%;
 }
 
-.rss-feed- {
+.sidenav-glyphs {
+    position: absolute;
+    right: 4%;
+}
+
+ul .sidebar-nav .text-left {
 
 }
 
-.code-forum-link {}
+/*[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 
-.
+[ng\:if], [ng-if], .ng-if {
+  display: none !important;
+}*/

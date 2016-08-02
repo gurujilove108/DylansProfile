@@ -55,7 +55,7 @@
 .sidebar-nav {
     position: relative;
     top: 0;
-    width: 250px;
+    width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -75,11 +75,10 @@
 }
 
 .sidebar-nav li a:hover {
-    margin-top: ;
+
     text-decoration: none;
     background: #4d8bff;
     color: #00091a;
-
     -webkit-animation: fadeItOne 3s ease-in;
     -moz-animation: fadeItOne 3s ease-in;
     -o-animation: fadeItOne 3s ease-in;

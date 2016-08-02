@@ -12,7 +12,12 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
     }
 
     $scope.getSignedInState = function () {
+        if (!(oauth2Provider.signedIn)) {
+            return false;
+        }
         return oauth2Provider.signedIn;
+
+
     };
 
     $scope.signIn = function () {
@@ -37,10 +42,6 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
         $scope.rootMessages = 'Logged out';
     };
 
-    $scope.collapseNavbar = function () {
-        angular.element(document.querySelector('.navbar-collapse')).removeClass('in');
-    };
-
     $scope.toggleMenuAngular = function() {
         var t1 = timeNow();
         var wrapper = angular.element(document.querySelector("#wrapper"))[0];
@@ -61,8 +62,9 @@ controllers.controller("NanodegreeController", function ($scope, $location, oaut
     $scope.say = function(input) {
         log(input);
     }
+
     $scope.fetchNanodegreesFromDatastore = function(user_id) {
-        var nanodegreeInterval = window.ser
+
     }
 
 })
