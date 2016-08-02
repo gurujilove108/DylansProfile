@@ -1,6 +1,8 @@
 jQuery(document).ready(function() {
+    jQuery(window).resize(onResize);
+    jQuery(window).resize();
+
     var currentWidth;
-    $(window).resize(onResize);
     function onResize(event) {
         currentWidth = jQuery(window).width();
         if (currentWidth <= 1300) {
@@ -10,6 +12,7 @@ jQuery(document).ready(function() {
             jQuery("#dropdownMenuButton i").removeClass("fa-3x").addClass("fa-2x");
         }
     }
+
     angular.bootstrap(document, ['dylansProfileApp']);
 });
 

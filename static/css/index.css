@@ -26,7 +26,6 @@
 }
 
 #login-dropdown {
-    margin-top: 2%;
     position: absolute;
     right: 15%;
     margin-top: auto;
@@ -44,19 +43,39 @@
     font-size: 105%;
 }
 
-#login-dropdown button:hover  {
-    color: #001233;
-    background: #00bbff;
-    border-color: #001233;
-}
-
 .open .dropdown-menu {
     height: 300px;
-    width: 300px;
+    width: 100px;
     margin-right: 10%;
+    border: none;
+    box-shadow: none;
+    margin-top: 20%;
 }
 
-#login-dropdown .open .dropdown-menu li {
+.open .dropdown-menu li a {
+    padding-left: 44px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: floralwhite;
+    box-shadow: 1px 1px 1px gray;
+    margin-top: 10%;
+    background: #262626;
+}
+
+.dropdown-menu li a:hover {
+    cursor: pointer;
+    background: #262626;
+}
+.fa-google-plus-square {
+    color: #d34836;
+}
+
+.fa-twitter-square {
+    color: #4099FF;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
 }
 
 .nav-item .navbar-brand {
@@ -135,6 +154,16 @@
         margin-left: 204px;
     }
 }
+
+/*@media only screen and (max-width: 1260px) {
+    #wrapper.toggled #sidebar-wrapper {
+        width: 204px;
+    }
+    #wrapper.toggled #page-content-wrapper .navbar-fixed-top {
+        margin-left: 204px;
+    }
+}*/
+
 
 @media only screen and (min-width: 1261px) {
     #wrapper.toggled #sidebar-wrapper {
