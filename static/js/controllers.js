@@ -49,6 +49,9 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
         var mobileDropdownMenu = angular.element(document.querySelector("#mobileDropdownMenuParent"))[0];
         (function() {
             if (window.currentWidth > 672) {
+                if (mobileDropdownMenu.className.indexOf("open") != -1) {
+                    mobileDropdownMenu.className = "dropdown closed";
+                }
                 if (wrapper.className == "") {
                     wrapper.className = "toggled";
                 } else if (wrapper.className == "toggled") {

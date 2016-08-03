@@ -78,15 +78,6 @@
                                     <span class="fa fa-list fa-1x" aria-hidden="true"></span>
                                 </a>
                             </li>
-                            <li id="mobileDropdownMenuParent" class="dropdown closed">
-                                <ul id="mobileDropdownMenu" class="dropdown-menu">
-                                    <li class=""><!-- <img src="/img/udacity-logo-2.png" class="udacity-logo" alt="+"> --><a href="/nanodegrees">Udacity</a></li>
-                                    <li class=""><!-- <img src="/img/twilio-logo-2.png" class="twilio-logo" alt="+"> --><a href="/twilio_dashbard">Twilio</a></li>
-                                    <li class=""><!-- <i class="fa fa-code fa-3x code-icon" aria-hidden="true"></i> --><a href="/code_forums">Coder Forums</a></li>
-                                    <li class=""><!-- <i class="fa fa-rss-square fa-3x rss-feed-icon" aria-hidden="true"> --></i><a href="/rss_feeds">Rss Feeds</a></li>
-                                    <li class=""><!-- <i class="fa fa-file-text fa-3x about-icon"></i> --><a href="/about">About</a></li>
-                                </ul>
-                            </li>
                             <li id="nav-brand-custom" class="nav-item"><a class="navbar-brand" href="/">Dylan's Coder Profiles</a></li>
                             <li ng-if="!rc.getSignedInState" id="login-dropdown" class="dropdown" ng-cloak>
                                 <button class="btn dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-2x">Login</i> <i class="fa fa-sign-in fa-2x"></i></button>
@@ -94,6 +85,15 @@
                                     <li><a><i class="fa fa-google-plus-square fa-4x"></i></a></li>
                                     <li><a><i class="fa fa-twitter-square fa-4x"></i></a></li>
                                     <li><a><i class="fa fa-facebook-square fa-4x"></i></a></li>
+                                </ul>
+                            </li>
+                            <li id="mobileDropdownMenuParent" class="dropdown closed">
+                                <ul id="mobileDropdownMenu" class="dropdown-menu">
+                                    <li class="dynamicallySetWidth"><!-- <img src="/img/udacity-logo-2.png" class="udacity-logo" alt="+"> --><a href="/nanodegrees">Udacity</a></li>
+                                    <li class="dynamicallySetWidth"><!-- <img src="/img/twilio-logo-2.png" class="twilio-logo" alt="+"> --><a href="/twilio_dashbard">Twilio</a></li>
+                                    <li class="dynamicallySetWidth"><!-- <i class="fa fa-code fa-3x code-icon" aria-hidden="true"></i> --><a href="/code_forums">Coder Forums</a></li>
+                                    <li class="dynamicallySetWidth"><!-- <i class="fa fa-rss-square fa-3x rss-feed-icon" aria-hidden="true"> --></i><a href="/rss_feeds">Rss Feeds</a></li>
+                                    <li class="dynamicallySetWidth"><!-- <i class="fa fa-file-text fa-3x about-icon"></i> --><a href="/about">About</a></li>
                                 </ul>
                             </li>
                         </ul>
