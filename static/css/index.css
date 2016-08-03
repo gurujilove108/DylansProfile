@@ -176,6 +176,15 @@
     }
 }
 
+@media only screen and (max-width: 672px) {
+    #sidebar-wrapper {
+        display: none;
+    }
+
+    #wrapper.toggled #page-content-wrapper .navbar-fixed-top {
+        margin-left: 0;
+    }
+}
 @media only screen and (max-width: 490px) {
     #login-dropdown {
         top: 53px;
