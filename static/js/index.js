@@ -2,12 +2,12 @@ jQuery(document).ready(function() {
     jQuery(window).resize(onResize);
     jQuery(window).resize();
 
-    var currentWidth;
+    window.currentWidth;
     function onResize(event) {
-        currentWidth = jQuery(window).width();
-        if (currentWidth <= 1300) {
+        window.currentWidth = jQuery(window).width();
+        if (window.currentWidth <= 1300) {
             jQuery(".fa-3x").removeClass("fa-3x").addClass('fa-2x');
-        } else if (currentWidth > 1300) {
+        } else if (window.currentWidth > 1300) {
             jQuery(".fa-2x").removeClass("fa-2x").addClass('fa-3x');
             jQuery("#dropdownMenuButton i").removeClass("fa-3x").addClass("fa-2x");
         }

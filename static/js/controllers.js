@@ -46,11 +46,21 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
         var t1 = timeNow();
         var wrapper = angular.element(document.querySelector("#wrapper"))[0];
         var page_content_wrapper;
+        var mobileDropdownMenu = angular.element(document.querySelector("#mobileDropdownMenuParent"))[0];
         (function() {
-            if (wrapper.className == "") {
-                wrapper.className = "toggled";
-            } else if (wrapper.className == "toggled") {
-                wrapper.className = "";
+            if (window.currentWidth > 672) {
+                if (wrapper.className == "") {
+                    wrapper.className = "toggled";
+                } else if (wrapper.className == "toggled") {
+                    wrapper.className = "";
+                }
+            } else if (window.currentWidth <= 672) {
+                if (mobileDropdownMenu.className.indexOf("open") == -1) {
+                    mobileDropdownMenu.className = "dropdown open";
+                } else if (mobileDropdownMenu.className.indexOf("open") != -1) {
+                    mobileDropdownMenu.className = "dropdown closed";
+                }
+                log(window.currentWidth);
             }
         })();
         var t2 = timeNow();
@@ -59,14 +69,7 @@ controllers.controller('RootController', function ($scope, $location, oauth2Prov
 });
 
 controllers.controller("NanodegreeController", function ($scope, $location, oauth2Provider) {
-    $scope.say = function(input) {
-        log(input);
-    }
 
-    $scope.fetchNanodegreesFromDatastore = function(user_id) {
-
-    }
-
-})
+});
 
 
